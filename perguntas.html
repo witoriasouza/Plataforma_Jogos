@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jogo de Perguntas</title>
+    <link rel="stylesheet" type="text/css" href="css/perguntas.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+    
+        
+        <a href="#" class="logo">PTF<span>JOGOS</span></a>
+    
+        <nav class="navbar">
+            <a href="index.html"> HOME  </a>
+            
+            <a href="https://www.google.com/url?q=https://watzap-witoriadayanna544.b4a.run/&sa=D&source=editors&ust=1686528623199535&usg=AOvVaw14eEJm-K3WBLj-Es-ylG7M" id="botaoc"> CHAT </a>
+        </nav>
+
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Teste Lógico</h1>
+    <div id="game-container">
+        <div id="container-pergunta">
+            <h1 id="texto-pergunta"></h1>
+            <ul id="lista-opcoes"></ul>
+        </div>
+        <button id="botao-enviar">Enviar</button>
+        <div id="resultado"></div>
+    </div>
+    
+
+    <script >
+
+    // array
+
+    //question: A pergunta em si.
+    //options: Um array com as opções de resposta para a pergunta.
+    //answer: A resposta correta para a pergunta.
+        const questions = [
+    {
+        question: 'Se o amanhã de ontem era quinta-feira, que dia é o dia depois de amanhã de ontem?',
+        options: [' Sexta-feira', ' Quarta-feira', ' Sábado', ' Domingo'],
+        answer: ' Sexta-feira'
+    },
+    {
+        question: 'Meu avô tem quatro filhos, cada filho tem quatro filhos. Quantos primos eu tenho?',
+        options: [' 16', ' 12', ' 15', ' 10'],
+        answer: ' 12'
+    },
+    {
+        question: 'Nelson tinha 40 ovos, Ana tem 5 ovos, Carlos terá 50 ovos. Quem tem mais ovos?',
+        options: [' Ana', ' Carlos', ' Nelson'],
+        answer: ' Ana'
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionTextElement = document.getElementById('texto-pergunta');
+const optionsListElement = document.getElementById('lista-opcoes');
+const submitButton = document.getElementById('botao-enviar');
+const resultElement = document.getElementById('resultado');
+
+// Exibe a pergunta atual e as opções de resposta
+function showQuestion() {
+    const question = questions[currentQuestion];
+    questionTextElement.innerText = question.question;
+
+    optionsListElement.innerHTML = '';
+    for (let i = 0; i < question.options.length; i++) {
+        const option = question.options[i];
+
+        const liElement = document.createElement('li');
+        const inputElement = document.createElement('input');
+        inputElement.type = 'radio';
+        inputElement.name = 'answer';
+        inputElement.value = option;
+        liElement.appendChild(inputElement);
+        liElement.appendChild(document.createTextNode(option));
+
+        optionsListElement.appendChild(liElement);
+    }
+}
+
+// Verifica a resposta selecionada pelo usuário
+function checkAnswer() {
+    const selectedOption = document.querySelector('input[name="answer"]:checked');
+    if (selectedOption) {
+        const userAnswer = selectedOption.value;
+        const question = questions[currentQuestion];
+
+        if (userAnswer === question.answer) {
+            score++;
+        }
+
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }
+}
+
+// Exibe o resultado final
+function showResult() {
+    questionTextElement.innerText = '';
+    optionsListElement.innerHTML = '';
+
+    submitButton.style.display = 'none';
+
+    resultElement.innerText = `Você acertou ${score} de ${questions.length} perguntas!`;
+}
+
+// Evento de clique no botão de envio
+submitButton.addEventListener('click', checkAnswer);
+
+// Inicia o jogo quando a página é carregada
+window.addEventListener('load', showQuestion);
+
+    </script>
+
+    <style>
+        body {
+    text-align: center;
+}
+
+h1 {
+    color: #0a0a0a;
+}
+
+#game-container {
+    margin-top: 50px;
+}
+
+#texto-pergunta {
+    margin-bottom: 20px;
+}
+
+#lista-opcoes {
+    list-style-type: none;
+    padding: 0;
+}
+
+#lista-opcoes li {
+    margin-bottom: 10px;
+}
+
+#botao-enviar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    </style>
+</body>
+</html>

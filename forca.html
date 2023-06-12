@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/forca.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Jogo Da forca</title>
+    </head>
+    <body onload="sorteia()">
+
+        <header>
+
+            <input type="checkbox" name="" id="toggler">
+            <label for="toggler" class="fas fa-bars"></label>
+        
+            
+            <a href="#" class="logo">PTF<span>JOGOS</span></a>
+        
+            <nav class="navbar">
+                <a href="index.html"> HOME  </a>
+                
+                <a href="https://www.google.com/url?q=https://watzap-witoriadayanna544.b4a.run/&sa=D&source=editors&ust=1686528623199535&usg=AOvVaw14eEJm-K3WBLj-Es-ylG7M" id="botaoc"> CHAT </a>
+            </nav>
+        
+    
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+
+        <div id="jogo">
+            <div id="titulo">
+                Jogo Da Forca
+            </div>
+            <div id="tabeladiv">
+                <table border="0" id="tabela" align="center">
+                    <tr>
+                        <td id="tabAcerto">
+                            <div id="acerto">Acertos: 0</div>
+                            <br>
+                            <div id="palcerta">PALAVRAS CERTAS: 0 <br> PALAVRAS ERRADAS: 0</div>
+                        </td>
+                        <td>
+                            <div id="forca" class="anima">
+                                <img src="imagens/forca1.png" id="imagem">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <br>
+                <hr>
+                
+                <table border="0" id="tabela" align="center">
+                    <tr>
+                        <td>
+                            <br>
+                            <div id="tema">TEMA: Fruta</div>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="tentativa">
+                                <form id="tenta">
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <br>
+                <hr>
+
+                <table border="0" id="tabela" align="center">
+                    <tr>
+                        <td>
+                            <div id="letras">
+                                <p>
+                                    <button type="button" id="Q" onmousedown="Confere('Q')" onmouseup="acabou()">Q</button>
+                                    <button type="button" id="W" onmousedown="Confere('W')" onmouseup="acabou()">W</button>
+                                    <button type="button" id="E" onmousedown="Confere('E')" onmouseup="acabou()">E</button>
+                                    <button type="button" id="R" onmousedown="Confere('R')" onmouseup="acabou()">R</button>
+                                    <button type="button" id="T" onmousedown="Confere('T')" onmouseup="acabou()">T</button>
+                                    <button type="button" id="Y" onmousedown="Confere('Y')" onmouseup="acabou()">Y</button>
+                                    <button type="button" id="U" onmousedown="Confere('U')" onmouseup="acabou()">U</button>
+                                    <button type="button" id="I" onmousedown="Confere('I')" onmouseup="acabou()">I</button>
+                                    <button type="button" id="O" onmousedown="Confere('O')" onmouseup="acabou()">O</button>
+                                    <button type="button" id="P" onmousedown="Confere('P')" onmouseup="acabou()">P</button>
+                                    <br><br>
+                                    <button type="button" id="A" onmousedown="Confere('A')" onmouseup="acabou()">A</button>
+                                    <button type="button" id="S" onmousedown="Confere('S')" onmouseup="acabou()">S</button>
+                                    <button type="button" id="D" onmousedown="Confere('D')" onmouseup="acabou()">D</button>
+                                    <button type="button" id="F" onmousedown="Confere('F')" onmouseup="acabou()">F</button>
+                                    <button type="button" id="G" onmousedown="Confere('G')" onmouseup="acabou()">G</button>
+                                    <button type="button" id="H" onmousedown="Confere('H')" onmouseup="acabou()">H</button>
+                                    <button type="button" id="J" onmousedown="Confere('J')" onmouseup="acabou()">J</button>
+                                    <button type="button" id="K" onmousedown="Confere('K')" onmouseup="acabou()">K</button>
+                                    <button type="button" id="L" onmousedown="Confere('L')" onmouseup="acabou()">L</button>
+                                    <br><br>
+                                    <button type="button" id="Z" onmousedown="Confere('Z')" onmouseup="acabou()">Z</button>
+                                    <button type="button" id="X" onmousedown="Confere('X')" onmouseup="acabou()">X</button>
+                                    <button type="button" id="C" onmousedown="Confere('C')" onmouseup="acabou()">C</button>
+                                    <button type="button" id="V" onmousedown="Confere('V')" onmouseup="acabou()">V</button>
+                                    <button type="button" id="B" onmousedown="Confere('B')" onmouseup="acabou()">B</button>
+                                    <button type="button" id="N" onmousedown="Confere('N')" onmouseup="acabou()">N</button>
+                                    <button type="button" id="M" onmousedown="Confere('M')" onmouseup="acabou()">M</button>
+                                    <button type="button" id="-" onmousedown="Confere('-')" onmouseup="acabou()">-</button>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <section class="footer">
+            <br>
+            <br>
+            <br>
+            <br>
+        
+        </section>
+    <script>
+        var sPerguntas = [["CARAMBOLA", "FRUTA"], ["JAMBO", "FRUTA"], ["PITOMBA", "FRUTA"], ["HOLAMBRA", "CIDADE"], ["HORTOLÂNDIA", "CIDADE"], ["ALICATE", "FERRAMENTA"], ["SETTA TICO-TICO", "FERRAMENTA"], ["CHAVE DE FENDA", "FERRAMENTA"], ["JORNAL", "OBJETO"], ["PALITO DE DENTE", "OBJETO"], ["STROGONOFF", "COMIDA"], ["MACARRONADA", "COMIDA"], ["SANTANA", "CARRO"], ["RENEGADE", "CARRO"], ["ROSA", "FLOR"], ["LÍRIO", "FLOR"], ["VIOLÃO", "INSTRUMENTO MUSICAL"], ["SAXOFONE", "INSTRUMENTO MUSICAL"], ["CONTRABAIXO", "INSTRUMENTO MUSICAL"], ["JOHNNY DEPP", "ATOR"], ["WILL SMITH", "ATOR"], ["ANYA TAYLOR-JOY", "ATRIZ"], ["SCARLETT JOHANSSON", "ATRIZ"], ["BATMAN", "PERSONAGENS"], ["CAPITÃO AMÉRICA", "PERSONAGEM"], ["CORINGA", "PERSONAGEM"], ["PENELOPE CHARMOSA", "PERSONAGEM"], ["MINECRAFT", "JOGOS"], ["THE LAST OF US", "JOGOS"]]
+
+//Matriz para o shuffle
+var iSorteados = [];
+//Quantidade de jogadas feitas para buscar no vetor de Sorteados
+var iJogada = 0;
+//Armazrna a palavra da vez
+var sPalavraSorteada;
+//Conta as letras certas
+var iAcertos = 0;
+//Conta as Letras erradas
+var iErro = 0;
+//Guarda a letra clicada para poder desabilitá-la
+var cLetraClicada = "";
+
+//Vetor com as letras do teclado para facilitar a busca do ID
+var sLetras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '-'];
+//Váriaveis que contam os acertos e erros
+var iCertas = 0, iErradas = 0;
+
+//Função que cria os espaços da letra
+function criaLetras(sPalavra) {
+    //Busca o formulário
+    var formula = document.getElementById("tenta");
+    var j = 0;
+    console.log("Palavra: " + sPalavra);
+    //Tamanho da palavra
+    for (var i = 0; i < sPalavra.length; i++) {
+        //Se for diferente de espaço (32)
+        if (sPalavra[i].charCodeAt(0) != 32) {
+            //Cria um input
+            var letra = document.createElement("input");
+            //Define os atributos para o input
+            //Tipo
+            letra.setAttribute("type", "text");
+            letra.setAttribute("name", "tenta" + j);
+            letra.setAttribute("id", "tenta" + j);
+            letra.setAttribute("maxlength", 1);
+            letra.setAttribute("size", 1);
+            letra.setAttribute("disabled", "true");
+            //Adiciona o input no Formulário
+            formula.appendChild(letra);
+            j++;
+        } else {
+            //Quando for espaço, ele separa 20px a esquerda e 1px a direita do input anterior
+            document.getElementById("tenta" + (j - 1)).style.margin = "0px 20px 0px 1px";
+        }
+    }
+    //Remove todos os espaços e acentos
+    sPalavraSorteada = limpa(sPalavra);
+    //Exibe o tema e a quantidade de letras
+    document.getElementById("tema").innerHTML = sPerguntas[iSorteados[iJogada]][1] + " - " + sPalavraSorteada.length + " letras";
+}
+
+function sorteia() {
+    //Insere os números dentro do vetor conforme a quantidade de itens da matriz
+    for (var m = 0; m < sPerguntas.length; m++) {
+        iSorteados.push(m);
+    }
+    //Faz a mistura
+    iSorteados = shuffleArray(iSorteados);
+    //Chama a função que separa as letras das palavras
+    criaLetras(sPerguntas[iSorteados[iJogada]][0]);
+}
+
+//Função que confere a letra clicada
+
+function Confere(cLetra) {
+    //Atribui a letra a uma variável global
+    cLetraClicada = cLetra;
+    //Cria variável que definirá se a letra foi encontrada na palavra
+    var lAchou = false;
+    //Percorre as letras da palavra sorteada
+    for (var i = 0; i < sPalavraSorteada.length; i++) {
+        //Se a letra clicada, existir na palavra
+        if(cLetra == sPalavraSorteada.charAt(i)){
+            document.getElementById("tenta" + i).value = cLetra;
+            //Conta acertos
+            iAcertos++;
+            //Exibe acertos
+            document.getElementById("acerto").innerHTML = "Acertos: " + iAcertos;
+            //Indica que achou a letra na palavra
+            lAchou = true;
+        }
+    }
+    //Se não achou a letra
+    if (lAchou == false) {
+        //Conta o erro
+        iErro++;
+        //Insere a imagem conforme a quantida de de erro
+        document.getElementById("imagem").src = "imagens/forca" + (iErro + 1) + ".png";
+    }
+}
+
+//Função que verifica se o jogo acabou
+function acabou(){
+    //Cria variável que indicará se o jogo acabou
+    var lAcabou = false;
+    //Se a quantidade de acertos for igual ao tamanho da palavra
+    if(iAcertos == sPalavraSorteada.length){
+        //O jogo acabou
+        lAcabou = true;
+        //Exibe mensagem
+        alert("Parabéns, você conseguiu!");
+        iCertas++;
+        //Se a quantidade de letras erradas chegou a 6
+    }else if(iErro == 6){
+        //O jogo acabou
+        lAcabou = true;
+        //Exibe a mensagem
+        alert("Enforcado!");
+        iErradas++;
+    }
+
+    //Desabilita a letra clicada
+    document.getElementById(cLetraClicada).disabled = true;
+    //Se o jogo acabou
+    if(lAcabou){
+        //Remove todos os inputs
+        for(var i = 0; i < sPalavraSorteada.length; i++){
+            document.getElementById("tenta" + i).remove();
+        }
+        //Incrementa jogadas para ir para a próxima palavra
+        iJogada++;
+        //Exibe quantidade de palavras jogadas certas e erradas
+        document.getElementById("palcerta").innerHTML = "Palavras certas: " + iCertas + "<br> Palavras erradas: " + iErradas;
+        //Chama função que criará novo jogo;
+        criaLetras(sPerguntas[iSorteados[iJogada]][0]);
+        //Inicializa variáveis
+        iAcertos = 0;
+        iErro = 0;
+        document.getElementById("acerto").innerHTML = "Acertos: " + iAcertos;
+        //Volta imagem da forca
+        document.getElementById("imagem").src = "imagens/forca" + (iErro + 1) + ".png";
+        //Habilita todas as letras
+        for(var i = 0; i < sLetras.length; i++){
+            document.getElementById(sLetras[i]).disabled = false;
+        }
+    }
+}
+
+//Função que mistura os valores do Array
+function shuffleArray(d){
+    for(var c = d.length - 1; c > 0; c--){
+        var b = Math.floor(Math.random() * (c + 1));
+        var a = d[c];
+        d[c] = d[b];
+        d[b] = a;
+    }
+    return d;
+}
+
+function limpa(sItem){
+    var sResultado = sItem;
+    //Retira todos os espaços
+    sResultado = replaceAll(sResultado, " ", "");
+    //Retira acentos e cedilhas. Parâmetro NFD, capaz de separar os acentos das letras. Método replace substitui todas as ocorrências de caracteres diacríticos, combinando-os na sequência Unicode
+    sResultado = sResultado.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+    return sResultado;
+}
+
+//Função para substituir todas as ocorrências
+function replaceAll(str, de, para){
+    //Procura a ocorrência
+    var pos = str.indexOf(de);
+    //Se achou
+    while(pos > -1){
+        //Substitui
+        str = str.replace(de, para);
+        //E procura novamente a ocorrência
+        pos = str.indexOf(de);
+    }
+    //Retorna a string sem acentos e espaços
+    return (str);
+}
+
+function shake(e, oncomplete, distance, time){
+    var time = 500;
+    var distance = 5;
+
+    var start = (new Date()).getTime();
+    animate();
+
+    function animate(){
+        var now = (new Date()).getTime();
+        var elapsed = now - start;
+        var fraction = elapsed / time;
+        if(fraction < 1){
+            var x = distance * Math.sin(fraction * 4 * Math.PI);
+            e.style.left = x + "px";
+
+            setTimeout(animate, Math.min(25, time - elapsed));
+        }else{
+            if(oncomplete) oncomplete(e);
+        }
+    }
+}
+
+function shakeme(event1){
+    shake(event1.target);
+}
+
+    </script>
+
+    <style>
+        
+body{
+    background: #F5DEB3;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+button{
+    font-size: 14px;
+    color: #050505;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #ffffff 0%,
+    #ebebeb 50%, #dbdbdb 50%, #b5b5b5);
+    border-radius: 10px;
+    border: 1px solid #000000;
+    box-shadow: 0px 1px 3px rgba(000, 000, 000, 0.5), 
+    inset 0px 0px 2px rgb(12, 12, 12);
+    text-shadow: 0px -1px 0px rgba(000, 000, 000, 0.2),
+    0px 1px 0px rgb(0, 0, 0);  
+}
+button :hover{
+    background: linear-gradient(to top, #ffffff 0%, #ebebeb 50%
+    ,#dbdbdb 50%, #000000);
+}
+
+button:disabled{
+    background-color: #0c0c0c;
+    color: #000000;
+}
+
+#jogo{
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#titulo{
+    text-align: center;
+    margin: 40px auto;
+    font-size: 40px; text-transform: uppercase;
+    color: #fff;
+}
+
+#tabeladiv{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#forca img{
+    width: 55%;
+    height: 55%;
+    float: right;
+}
+    </style>
+</body>
+</html>

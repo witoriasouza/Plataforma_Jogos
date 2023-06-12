@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css">
+        <title>Troca Palavras</title>
+    </head>
+    <body>
+
+<header>
+
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        
+            
+        <a href="#" class="logo">PTF<span>JOGOS</span></a>
+        
+         <nav class="navbar">
+            <a href="index.html"> HOME  </a>
+                
+            <a href="https://www.google.com/url?q=https://watzap-witoriadayanna544.b4a.run/&sa=D&source=editors&ust=1686528623199535&usg=AOvVaw14eEJm-K3WBLj-Es-ylG7M" id="botaoc"> CHAT </a>
+         </nav>
+
+</header>
+        <center>
+            <fieldset>
+                <div class="caixaFilmes">
+
+                    <h1>Troque uma palavra do nome dos filmes e veja o que acontece!</h1>
+
+                
+                        <p class="filmesNomes">"A hora do <strong id="filme1">Rush"</strong></p>
+                        <p class="filmesNomes">"O <strong id="filme2">Mágico</strong> de OZ"</p>
+                        <p class="filmesNomes">"11 homens e um <strong id="filme3">segredo"</strong></p>
+                        <p class="filmesNomes"><strong id="filme4">Planeta</strong> dos Macacos"</p>
+                        <p class="filmesNomes">"Procurando <strong id="filme5">Nemo"</strong></p>              
+                
+                    <div class="areaInputs">
+                        <input class="palavraDigitada" type="text" id="palavra" placeholder="Digite uma palavra" required/> 
+                        <button class="trocarPalavraButton" onclick="trocar()" id="começo">Trocar Palavras</button>
+                    </div>
+            </fieldset>
+        </center>
+<section class="footer">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+        <script>
+            
+function trocar(){
+    var newword = document.getElementById("palavra").value;
+
+    if(document.getElementById("palavra").value == ""){ //usuario tem que digitar alguma palavra para jogar este jogo
+        alert("Por favor, insira uma palavra na caixa para jogar");
+        location.reload(); //Fazer reload na pagina, para prencher os nomes com as palavras originais novamente
+    }
+
+    document.getElementById("filme1").innerHTML = newword;
+    document.getElementById("filme2").innerHTML = newword;
+    document.getElementById("filme3").innerHTML = newword;
+    document.getElementById("filme4").innerHTML = newword;
+    document.getElementById("filme5").innerHTML = newword;
+}
+
+        </script>
+
+        <style>
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    flex-direction: column;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #ffffff;
+}
+
+.caixaFilmes{
+    margin: 2em;
+}
+
+.filmesNomes{
+    margin: 25px;
+    font-size: x-large;
+}
+
+.trocarPalavraButton{
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    margin: 5px;
+}
+
+.trocarPalavraButton:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.palavraDigitada{
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.4em;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+}
+
+fieldset{
+    margin: 1em solid;
+    border-radius: 0.5em;
+    background-color:#F5DEB3 ; 
+    margin: 200px;
+    padding: 0.010em;
+    border-color: #ffffff;
+}
+
+@media (max-width: 775px)
+{
+  .areaInputs{
+        flex-wrap: wrap;
+   }
+}
+
+
+
+        </style>
+</body>
+</html>
